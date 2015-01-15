@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>MyJSPServletProject</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>username</param-name>
+		<param-value>Context Param Name</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>MyServlet</servlet-name>
+		<servlet-class>com.sunil.servlets.MyServlet</servlet-class>
+		<init-param>
+			<param-name>username</param-name>
+			<param-value>Servlet Init Param Name</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyServlet</servlet-name>
+		<url-pattern>/MyServletTest</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>InitJSP</servlet-name>
+		<jsp-file>/MyServlet.jsp</jsp-file>
+		<init-param>
+			<param-name>defaultUser</param-name>
+			<param-value>Default User Name</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InitJSP</servlet-name>
+		<url-pattern>/MyServlet.jsp</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>InitJSP2</servlet-name>
+		<jsp-file>/WEB-INF/jsps/MyServlet.jsp</jsp-file>
+		<init-param>
+			<param-name>defaultUser</param-name>
+			<param-value>Default User Name 2</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InitJSP2</servlet-name>
+		<url-pattern>/MyServlet2.jsp</url-pattern>
+	</servlet-mapping>
+</web-app>
